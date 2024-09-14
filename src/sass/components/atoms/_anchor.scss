@@ -1,0 +1,19 @@
+.anchor {
+  width: 100%;
+  padding: 6px 0;
+  box-sizing: border-box;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--clicked {
+    font-weight: 700;
+    pointer-events: none;
+  }
+}

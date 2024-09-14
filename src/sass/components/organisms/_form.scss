@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form .fieldset {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.form .label {
+  margin-bottom: 4px;
+}
+
+.form .btn {
+  margin-top: 10px;
+  padding: 12px 10px;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: opacity 0.1s;
+}

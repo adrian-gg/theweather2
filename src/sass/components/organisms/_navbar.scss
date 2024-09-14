@@ -1,0 +1,36 @@
+.menu {
+  width: 100%;
+  height: var(--nav-height);
+  padding: 0px 12px;
+  border-bottom: 1px solid var(--tertiary-border-color);
+  background-color: var(--primary-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+
+  @include respond-to('medium') {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  @include respond-to('large') {
+    border-bottom: none;
+    background-color: transparent;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    z-index: 1;
+  }
+}
+
+.menu-button {
+  &.btn {
+    @include respond-to('large') {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+  }
+}

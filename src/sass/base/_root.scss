@@ -1,0 +1,14 @@
+:root {
+  /*-- fonts and texts --*/
+  @include to-root('primary-font-family', $font-family);
+  --primary-font-weight: 400;
+  --primary-line-height: 1.5;
+
+  @include generate-font-sizes('d', $display-font-sizes);
+  @include generate-font-sizes('t', $texts-font-sizes);
+
+  /*-- colors --*/
+  @include generate-colors($colors);
+
+  --nav-height: 54px;
+}

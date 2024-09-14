@@ -1,0 +1,73 @@
+/*
+ * Generate color palettes from variable $colors.
+ */
+@mixin generate-colors($colors) {
+  @each $color-item in $colors {
+    $name: nth($color-item, 1);
+    $color: nth($color-item, 2);
+    $number-of-variants: if(length($color-item) > 2, nth($color-item, 3), 9);
+
+    @include generate-palette($name, $color, $number-of-variants);
+  }
+}
+
+/*
+ * Generate color palette from each variable $colors' value.
+ */
+@mixin generate-palette($name, $color, $number-of-variants: 9) {
+  $palette-colors: (
+    '#{$name}': $color,
+  );
+
+  @if $number-of-variants > 0 and $number-of-variants < 255 {
+    $increment: calc(100% / ($number-of-variants + 1));
+
+    @for $i from 1 through $number-of-variants {
+      $percentage: $i * $increment;
+      $color-light: mix(#fff, $color, $percentage);
+      $color-dark: mix(#000, $color, $percentage);
+
+      $palette-colors: map-merge(
+        $palette-colors,
+        (
+          '#{$name}-light-#{$i * 10}': $color-light,
+          '#{$name}-dark-#{$i * 10}': $color-dark,
+        )
+      );
+    }
+  }
+
+  @include print-palette($palette-colors);
+}
+
+/*
+ * Print colors palette for root file.
+ */
+@mixin print-palette($colors) {
+  //Print hex colors
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+  }
+
+  //Print rgb colors
+  @each $name, $color in $colors {
+    --#{$name}-rgb: #{hex-to-rgb($color)};
+  }
+}
+
+/*
+ * Generate gradient from a list of colors for root file.
+ */
+@mixin generate-gradient($name: '', $colors: (), $deg: 0) {
+  $num-colors: length($colors);
+
+  $stops: ();
+  @for $i from 1 through $num-colors {
+    $position: calc(100% / ($num-colors - 1)) * ($i - 1);
+    $color: nth($colors, $i);
+    $stop: #{$color} + ' ' + #{$position};
+    $stops: append($stops, $stop, comma);
+  }
+
+  --#{$name}-gradient: linear-gradient(#{$deg + 'deg,' + $stops});
+}

@@ -1,0 +1,54 @@
+.background-sky {
+  --percent-elapsed-day: 0%;
+  width: 100%;
+
+  @include respond-to('medium') {
+    height: auto;
+  }
+
+  @include respond-to('huge') {
+    height: 100%;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  &::before {
+    background: linear-gradient(
+      #0c1e40 14%,
+      #f43906 19%,
+      #f5a930 23%,
+      #428ae5 31%,
+      #63b3ed 50%,
+      #428ae5 69%,
+      #f5a930 77%,
+      #f43906 81%,
+      #0c1e40 86%
+    );
+    background-size: 100% calc(100% * 24);
+    background-position: 0% var(--percent-elapsed-day);
+    transition: background-position 2s;
+  }
+
+  &::after {
+    background: linear-gradient(
+      180deg,
+      rgba(var(--white-rgb), 0) 0%,
+      rgba(var(--white-rgb), 0.3) 65%,
+      rgba(var(--white-rgb), 0.8) 100%
+    );
+  }
+
+  &--grey {
+    &::before {
+      filter: grayscale(0.4) contrast(0.4);
+    }
+  }
+}

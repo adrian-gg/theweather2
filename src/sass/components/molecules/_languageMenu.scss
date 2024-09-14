@@ -1,0 +1,31 @@
+.language-menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.language-option {
+  color: var(--primary-color);
+  font-weight: 300;
+
+  &--selected {
+    font-weight: 700;
+    pointer-events: none;
+  }
+
+  &.btn {
+    @include respond-to('large') {
+      color: var(--white);
+    }
+  }
+}
+
+.language-separator {
+  height: 16px;
+  border-left: 1px solid var(--primary-color);
+
+  @include respond-to('large') {
+    border-left: 1px solid var(--white);
+  }
+}

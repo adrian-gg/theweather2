@@ -1,0 +1,98 @@
+input,
+input[type='radio'],
+input[type='checkbox'] {
+  @extend %no-appearance;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+
+fieldset,
+.fieldset {
+  border: none;
+}
+
+label,
+.label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.label-text {
+  margin-right: 10px;
+  display: inline-block;
+  font-size: var(--t4-font-size);
+  font-weight: 500;
+}
+
+.switch {
+  --switchWidth: 42px;
+  width: var(--switchWidth);
+  height: 20px;
+  padding: 4px 8px;
+  border-radius: 360px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  top: 1px;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '';
+    border-radius: 360px;
+    position: absolute;
+  }
+
+  &::before {
+    width: calc(100% - 16px);
+    height: 2px;
+    background-color: var(--secondary-bg);
+    transition: 0.4s;
+  }
+
+  &::after {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--black);
+    background-color: var(--primary-bg);
+    left: 4px;
+    transition:
+      transform 0.4s,
+      border 0.2s;
+    box-sizing: border-box;
+  }
+
+  .fieldset:has(input:focus-visible) & {
+    outline: -webkit-focus-ring-color auto 1px;
+  }
+
+  .fieldset:has(input:checked) &::after {
+    border: 10px solid var(--black);
+    transform: translateX(calc(var(--switchWidth) - 20px + 8px));
+  }
+}
+
+input,
+.input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--secondary-border-color);
+  box-sizing: border-box;
+  font-family: var(--primary-font-family);
+
+  &::placeholder {
+    opacity: 0.8;
+  }
+}
+
+.error-alert {
+  margin: 5px 0;
+  font-size: 12px;
+  color: var(--alert-error-color);
+}

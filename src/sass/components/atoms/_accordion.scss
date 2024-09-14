@@ -1,0 +1,36 @@
+.accordion {
+  &[open] .accordion__head {
+    margin-bottom: 10px;
+  }
+}
+
+.accordion__head {
+  width: 100%;
+  padding: 8px 0;
+  font-size: var(--t5-font-size);
+  font-weight: 700;
+  line-height: 10px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition:
+    margin 150ms ease-out,
+    opacity 0.1s;
+  cursor: pointer;
+
+  &::marker {
+    font-size: 14px;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.accordion__head > span {
+  margin-left: 4px;
+}
+
+.accordion__body {
+  padding: 0 10px 10px;
+  padding-bottom: 16px;
+}

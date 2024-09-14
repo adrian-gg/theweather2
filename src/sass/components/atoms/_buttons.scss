@@ -1,0 +1,46 @@
+%button {
+  padding: 10px 12px;
+  border: none;
+  background-color: transparent;
+  font-family: var(--primary-font-family);
+  font-size: var(--t4-font-size);
+  color: var(--black);
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  @extend %no-appearance;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+}
+
+.btn {
+  @extend %button;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 20px;
+}
+
+.btn--primary {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.btn--secondary {
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+
+.btn--tertiary {
+  color: var(--black);
+}

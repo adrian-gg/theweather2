@@ -1,0 +1,11 @@
+@function hex-to-rgb($hex) {
+  @if type-of($hex) == color {
+    $r: red($hex);
+    $g: green($hex);
+    $b: blue($hex);
+
+    @return ($r, $g, $b);
+  } @else {
+    @error "The value provided is not a hexadecimal color.";
+  }
+}

@@ -1,0 +1,25 @@
+#root:has([data-theme='light']),
+[data-theme='light'] ::before,
+[data-theme='light'] ::after {
+  --primary-color: var(--grey-dark-80);
+  --secondary-color: var(--grey-dark-60);
+  --tertiary-color: var(--grey-dark-50);
+  --primary-bg: var(--grey-light-90);
+  --secondary-bg: var(--grey-light-70);
+  --tertiary-bg: var(--grey-light-60);
+  --primary-border-color: var(--primary-bg);
+  --secondary-border-color: var(--secondary-bg);
+  --tertiary-border-color: var(--tertiary-bg);
+  --alert-error-color: var(--red);
+
+  --primary-color-rgb: var(--grey-dark-80-rgb);
+  --secondary-color-rgb: var(--grey-dark-60-rgb);
+  --tertiary-color-rgb: var(--grey-dark-50-rgb);
+  --primary-bg-rgb: var(--grey-light-90-rgb);
+  --secondary-bg-rgb: var(--grey-light-70-rgb);
+  --tertiary-bg-rgb: var(--grey-light-60-rgb);
+  --primary-border-color-rgb: var(--primary-bg-rgb);
+  --secondary-border-color-rgb: var(--secondary-bg-rgb);
+  --tertiary-border-color-rgb: var(--tertiary-bg-rgb);
+  --alert-error-color-rgb: var(--red-rgb);
+}

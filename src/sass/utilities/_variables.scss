@@ -1,0 +1,80 @@
+// Colors
+$red: #e74c3c;
+$white: #ffffff;
+$grey: #808080;
+$black: #000000;
+
+$colors: (
+  ('red', $red, 0),
+  ('white', $white, 0),
+  ('black', $black, 0),
+  ('grey', $grey)
+); // (name, value, variations = 9)
+
+// Typography
+$font-family: 'Roboto Mono', monospace;
+$font-size-base: 1rem;
+
+$display1-font-size: $font-size-base * 5;
+$display2-font-size: $font-size-base * 4.5;
+$display3-font-size: $font-size-base * 4;
+$display4-font-size: $font-size-base * 3.5;
+$display5-font-size: $font-size-base * 3;
+$display6-font-size: $font-size-base * 2.5;
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+$text1-font-size: $font-size-base * 1.17;
+$text2-font-size: $font-size-base * 1.125;
+$text3-font-size: $font-size-base * 0.875;
+$text4-font-size: $font-size-base * 0.75;
+$text5-font-size: $font-size-base * 0.6875;
+$text6-font-size: $font-size-base * 0.625;
+
+$display-font-sizes: (
+  1: $display1-font-size,
+  2: $display2-font-size,
+  3: $display3-font-size,
+  4: $display4-font-size,
+  5: $display5-font-size,
+  6: $display6-font-size,
+);
+
+$headings-font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+);
+
+$texts-font-sizes: (
+  1: $text1-font-size,
+  2: $text2-font-size,
+  3: $text3-font-size,
+  4: $text4-font-size,
+  5: $text5-font-size,
+  6: $text6-font-size,
+);
+
+// If you want to add a new theme remember create its file in ./src/sass/utilities/themes/
+$themes: ('light', 'dark');
+
+$breakpoints: (
+  'small': (
+    min-width: 536px,
+  ),
+  'medium': (
+    min-width: 636px,
+  ),
+  'large': (
+    min-width: 1140px,
+  ),
+  'huge': (
+    min-width: 1240px,
+  ),
+);
